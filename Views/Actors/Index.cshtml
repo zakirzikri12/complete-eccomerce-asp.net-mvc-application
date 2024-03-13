@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Actor>
+
+@{
+	ViewData["Title"] = "List of Actors";
+}
+
+
+<div class="row">
+	<div class="col-md-8 offset-md-2">
+
+		<table>
+			<thead>
+				<tr>
+					<th>@Html.DisplayNameFor(model => model.ProfilePictureURL)</th>
+					<th>@Html.DisplayNameFor(model => model.Fullname)</th>
+					<th>@Html.DisplayNameFor(model => model.Bio)</th>
+
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+
+	</div>
+</div>
