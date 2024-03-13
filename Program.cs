@@ -1,7 +1,13 @@
+using eTikects;
+using eTikects.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+var startup = new Startup(builder.Configuration); // My custom startup class.
+
+startup.ConfigureServices(builder.Services); // Add services to the container.
 
 var app = builder.Build();
 
@@ -24,4 +30,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+startup.Configure(app, app.Environment); // Configure the HTTP request pipeline.
+//Seed database
+AppDbInitializer.Seed(app);
 app.Run();
