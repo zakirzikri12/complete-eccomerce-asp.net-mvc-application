@@ -1,4 +1,5 @@
 ﻿using eTikects.Data;
+using eTikects.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace eTikects
@@ -15,6 +16,9 @@ namespace eTikects
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
+
+            //service configuration
+            services.AddScoped<IActorsService, ActorsService>();
 
             services.AddControllersWithViews();
         }
