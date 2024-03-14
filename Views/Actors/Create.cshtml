@@ -8,7 +8,7 @@
     <div class="col-md-8 offset-2">
         <p>
             <h1>Add a New Actor</h1>
-        </p>
+        </p> 
         <div class="col-md-8 offset-2">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -38,7 +38,7 @@
                     <a class="btn btn-outline-secondary" asp-action="Index">Show all</a>
                 </div>
             </form>
-
+            
         </div>
 
     </div>
@@ -50,6 +50,7 @@
             var output = document.getElementById('ProfilePicturePreview')
             output.src = $("#ProfilePictureURL").val();
         })
+
         $("#ProfilePictureURL").on("change", function () {
             var output = document.getElementById('ProfilePicturePreview')
             output.src = $(this).val();
