@@ -1,22 +1,50 @@
 ﻿using eTikects.Data;
+using eTikects.Models;
+using eTikects.Services;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 
 namespace eTikects.Controllers
 {
     public class ActorsController : Controller
     {
-        private readonly AppDbContext _context;
+       
+        //inject services
+        private readonly IActorsService _service;
 
-        public ActorsController(AppDbContext context)
+        
+        public ActorsController(IActorsService service)
         {
-            _context = context;
+            
+            _service = service;
         }
 
-        public IActionResult Index()
+
+        public async Task<IActionResult> Index()
         {
-            var data = _context.Actors.ToList();
+            var data = await _service.GetAll();
 
             return View(data);
         }
+
+
+        // GET: Actors/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([Bind("Fullname,ProfilePictureURL,Bio")] Actor actor)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(actor);
+            }
+            _service.Add(actor);
+            return RedirectToAction(nameof(Index));
+        }
+
+        //GET : Actors/Detail/1
     }
 }
