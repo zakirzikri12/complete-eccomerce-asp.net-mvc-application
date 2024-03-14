@@ -1,6 +1,5 @@
 using eTikects;
 using eTikects.Data;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
