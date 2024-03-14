@@ -13,7 +13,7 @@ namespace eTikects.Services
         }
         public void Add(Actor actor)
         {
-            _context.Actors.Add(actor);
+           _context.Actors.Add(actor);
             _context.SaveChanges();
         }
 
