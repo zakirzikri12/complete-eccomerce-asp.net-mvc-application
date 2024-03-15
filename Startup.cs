@@ -17,7 +17,6 @@ namespace eTikects
         {
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
 
-            //service configuration
             services.AddScoped<IActorsService, ActorsService>();
 
             services.AddControllersWithViews();

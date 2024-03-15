@@ -11,4 +11,3 @@ namespace eTikects.Services
         void Delete(int id);
     }
 }
-

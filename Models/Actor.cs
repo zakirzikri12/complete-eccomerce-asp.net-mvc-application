@@ -23,4 +23,4 @@ namespace eTikects.Models
 
         public List<Actor_Movie>? Actor_Movies { get; set; }
     }
-};
+}
