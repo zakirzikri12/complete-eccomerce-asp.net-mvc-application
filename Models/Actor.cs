@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using eTikects.Data.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace eTikects.Models
 {
-    public class Actor
+    public class Actor :IEntityBase
     {
         [Key]
         public int Id { get; set; }
