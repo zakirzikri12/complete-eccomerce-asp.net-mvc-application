@@ -1,4 +1,5 @@
-﻿using eTikects.Data;
+﻿using eTickets.Data.Services;
+using eTikects.Data;
 using eTikects.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +21,8 @@ namespace eTikects
             //Service Configuration
             services.AddScoped<IActorsService, ActorsService>();
             services.AddScoped<IProducersService, ProducersService>();
+            services.AddScoped<ICinemasService, CinemasService>();
+            services.AddScoped<IMoviesService, MoviesService>();
 
             services.AddControllersWithViews();
         }
