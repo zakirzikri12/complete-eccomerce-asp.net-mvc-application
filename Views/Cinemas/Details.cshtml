@@ -1,13 +1,13 @@
-﻿@model Actor
+﻿@model Cinema
 
 @{
-    ViewData["Title"] = "Details Actor";
+    ViewData["Title"] = "Details Cinema";
 }
 
 <div class="row-text">
     <div class="col-md-8 offset-2">
         <p>
-            <h1>Details for @Model.Fullname</h1>
+            <h1>Details for @Model.Name</h1>
         </p>
         <div class="col-md-8 offset-2">
 
@@ -17,19 +17,19 @@
             </div>
 
             <div class="form-group">
-                <label asp-for="ProfilePictureURL" class="control-label"></label>
-                <input asp-for="ProfilePictureURL" class="form-control" readonly />
-                <span asp-validation-for="ProfilePictureURL" class="text-danger"></span>
+                <label asp-for="Logo" class="control-label"></label>
+                <input asp-for="Logo" class="form-control" readonly />
+                <span asp-validation-for="Logo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Fullname" class="control-label"></label>
-                <input asp-for="Fullname" class="form-control" readonly />
-                <span asp-validation-for="Fullname" class="text-danger"></span>
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" readonly />
+                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Bio" class="control-label"></label>
-                <input asp-for="Bio" class="form-control" readonly />
-                <span asp-validation-for="Bio" class="text-danger"></span>
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" readonly />
+                <span asp-validation-for="Description" class="text-danger"></span>
             </div>
 
             <div class="form-group">
@@ -46,7 +46,7 @@
     <script>
         $(document).ready(function () {
             var output = document.getElementById('ProfilePicturePreview')
-            output.src = $("#ProfilePictureURL").val();
+            output.src = $("#Logo").val();
         })
     </script>
 }

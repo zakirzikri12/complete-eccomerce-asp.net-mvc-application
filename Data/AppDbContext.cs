@@ -25,6 +25,10 @@ namespace eTikects.Data
             base.OnModelCreating(modelBuilder);
         }
 
+        internal async Task<string?> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
 
         public DbSet<Actor> Actors { get; set; }
         public DbSet<Movie> Movies { get; set; }

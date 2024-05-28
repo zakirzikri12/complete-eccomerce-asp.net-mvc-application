@@ -3,8 +3,7 @@ using eTikects.Models;
 
 namespace eTikects.Services
 {
-    public interface IActorsService :IEntityBaseRepository<Actor>
+    public interface ICinemasService : IEntityBaseRepository<Cinema>
     {
-
     }
 }
